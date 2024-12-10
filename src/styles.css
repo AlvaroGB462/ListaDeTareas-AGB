@@ -1,0 +1,28 @@
+/* Personaliza el estilo de los botones para más espacio entre ellos */
+.navbar-buttons .btn {
+  margin: 0 15px; /* Espacio a los lados de los botones */
+}
+
+/* Centrar todo el contenido dentro de la página */
+.container {
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla */
+}
+
+/* Ajustes para los botones */
+.custom-button {
+  height: 50px; /* Altura fija */
+  width: 200px; /* Ancho fijo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Eliminar el efecto de w-100 si se aplica */
+.navbar-buttons ul {
+  padding: 0; /* Sin padding para evitar espacios extra */
+  margin: 0; /* Sin márgenes adicionales */
+}
+
+.nav-item {
+  list-style: none; /* Asegurarse de que no hay puntos de lista */
+}
