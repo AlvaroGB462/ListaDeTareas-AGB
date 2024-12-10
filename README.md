@@ -61,6 +61,11 @@ For more information on using the Angular CLI, including detailed command refere
 
 
 
+Para iniciar el servidor json debe de ejecutar este comando:
+1.Primero lo instala npm install -g json-server y luego lo ejecuta json-server --watch db.json
+
+
+
 
 
 
