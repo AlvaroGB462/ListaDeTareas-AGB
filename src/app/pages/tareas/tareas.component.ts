@@ -6,18 +6,29 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-tareas',
   templateUrl: './tareas.component.html',
   styleUrls: ['./tareas.component.css'],
-  imports: [FormsModule]
+  imports: [FormsModule],
 })
 export class TareasComponent implements OnInit {
   tareas: Tarea[] = [];
   nuevaTarea: string = '';
   categoria: string = 'Personal';
   tareaEditada: Tarea | null = null;
+  mostrarCompletadas: boolean = false; // Estado para alternar la vista de tareas
 
   constructor(private tareaService: TareaService) {}
 
   ngOnInit(): void {
     this.mostrarTareas(); // Cargar tareas al inicio
+  }
+
+  // Propiedad para obtener solo las tareas completadas
+  get tareasCompletadas(): Tarea[] {
+    return this.tareas.filter((tarea) => tarea.completada);
+  }
+
+  // Alternar entre mostrar todas las tareas o solo las completadas
+  toggleCompletadas(): void {
+    this.mostrarCompletadas = !this.mostrarCompletadas;
   }
 
   // Mostrar todas las tareas
@@ -31,14 +42,13 @@ export class TareasComponent implements OnInit {
   agregarTarea(): void {
     if (this.nuevaTarea) {
       const nuevaTarea: Tarea = {
-        id: "", // El id se asignará automáticamente en el servicio
+        id: '', // El id se asignará automáticamente en el servicio
         nombre: this.nuevaTarea,
         categoria: this.categoria,
-        completada: false
+        completada: false,
       };
 
-      this.tareaService.agregarTarea(nuevaTarea).subscribe((tareaAgregada) => {
-        // Una vez que la tarea se ha agregado, actualizamos la lista de tareas
+      this.tareaService.agregarTarea(nuevaTarea).subscribe(() => {
         this.mostrarTareas();
         this.nuevaTarea = ''; // Limpiar el campo de entrada
       });

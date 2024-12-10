@@ -1,32 +1,26 @@
 {
   "tareas": [
     {
+      "id": "1",
+      "nombre": "Cocinar",
+      "categoria": "Personal",
+      "completada": false
+    },
+    {
       "id": "2",
-      "nombre": "Estudiar Angular",
+      "nombre": "Limpiar",
       "categoria": "Trabajo",
       "completada": true
     },
     {
       "id": "3",
-      "nombre": "Cocinar",
-      "categoria": "Escuela",
-      "completada": true
+      "nombre": "Proyecto",
+      "categoria": "Trabajo",
+      "completada": false
     },
     {
       "id": "4",
-      "nombre": "fdawda",
-      "categoria": "Personal",
-      "completada": true
-    },
-    {
-      "id": "5",
-      "nombre": "DAAWD",
-      "categoria": "Trabajo",
-      "completada": true
-    },
-    {
-      "id": "6",
-      "nombre": "dad",
+      "nombre": "Gym",
       "categoria": "Escuela",
       "completada": true
     }

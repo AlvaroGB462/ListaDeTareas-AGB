@@ -10,19 +10,18 @@
 
 /* Ajustes para los botones */
 .custom-button {
-  height: 50px; /* Altura fija */
-  width: 200px; /* Ancho fijo */
+  height: 50px; 
+  width: 200px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Eliminar el efecto de w-100 si se aplica */
 .navbar-buttons ul {
-  padding: 0; /* Sin padding para evitar espacios extra */
-  margin: 0; /* Sin márgenes adicionales */
+  padding: 0; 
+  margin: 0; 
 }
 
 .nav-item {
-  list-style: none; /* Asegurarse de que no hay puntos de lista */
+  list-style: none; 
 }
