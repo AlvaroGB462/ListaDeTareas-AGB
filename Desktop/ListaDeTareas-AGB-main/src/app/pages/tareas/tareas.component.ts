@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea, TareaService } from '../../services/tarea.service';
 import { FormsModule } from '@angular/forms';
-import { CategoriasComponent } from "../categorias/categorias.component";
+import { CategoriasComponent } from '../categorias/categorias.component';
 
 @Component({
   selector: 'app-tareas',
@@ -15,11 +15,12 @@ export class TareasComponent implements OnInit {
   categoria: string = 'Personal';
   tareaEditada: Tarea | null = null;
   mostrarCompletadas: boolean = false; // Estado para alternar la vista de tareas
+  mensaje: string | null = null;
 
   constructor(private tareaService: TareaService) {}
 
-    // Frase que se enviará al componente Categorias
-    frase: string = "¿Por qué usar esta lista de tareas?";
+  // Frase que se enviará al componente Categorias
+  frase: string = '¿Por qué usar esta lista de tareas?';
 
   ngOnInit(): void {
     this.mostrarTareas(); // Cargar tareas al inicio
@@ -33,6 +34,11 @@ export class TareasComponent implements OnInit {
   // Alternar entre mostrar todas las tareas o solo las completadas
   toggleCompletadas(): void {
     this.mostrarCompletadas = !this.mostrarCompletadas;
+  }
+
+  // Método que recibe un string (la categoría seleccionada) desde el componente hijo
+  recibirCategoriaSeleccionada(categoria: string): void {
+    this.mensaje = `Categoría seleccionada: ${categoria}`; // Asigna el string recibido al mensaje
   }
 
   // Mostrar todas las tareas

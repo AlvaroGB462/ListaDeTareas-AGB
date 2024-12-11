@@ -95,7 +95,14 @@
     </div>
   }
    <!-- Ahora se pasa la frase al componente Categorias -->
-   <app-categorias [frase]="frase"></app-categorias>  <!-- Pasa la frase aquí -->
+   <app-categorias [frase]="frase" (categoriaSeleccionadaEmitir)="recibirCategoriaSeleccionada($event)"></app-categorias>  <!-- Pasa la frase aquí -->
+
+   @if(mensaje){
+    <div class="alert alert-info mt-3">
+      {{ mensaje }}
+    </div>
+   }
+
 </div>
 
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Tarea, TareaService } from '../../services/tarea.service';
 
 @Component({
@@ -11,7 +11,14 @@ export class CategoriasComponent {
   categoriaSeleccionada: string | null = null;
   tareasFiltradas: Tarea[] = [];
   @Input() frase: string = '';
+  @Output() categoriaSeleccionadaEmitir = new EventEmitter<string>(); // Output para emitir la categoría seleccionada
 
+  categoriasEmitir: string[] = ['Personal', 'Trabajo', 'Escuela'];
+
+  seleccionarCategoriaEmitir(categoria: string): void {
+    // Emitir un valor de tipo string al componente padre
+    this.categoriaSeleccionadaEmitir.emit(categoria);  // Emitir directamente el nombre de la categoría
+  }
   constructor(private tareaService: TareaService) {}
 
   // Seleccionar una categoría y mostrar las tareas correspondientes
