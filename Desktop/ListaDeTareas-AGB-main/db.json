@@ -1,0 +1,34 @@
+{
+  "tareas": [
+    {
+      "id": "1",
+      "nombre": "Cocinar",
+      "categoria": "Personal",
+      "completada": true
+    },
+    {
+      "id": "2",
+      "nombre": "Limpiar",
+      "categoria": "Trabajo",
+      "completada": false
+    },
+    {
+      "id": "3",
+      "nombre": "Proyecto",
+      "categoria": "Trabajo",
+      "completada": true
+    },
+    {
+      "id": "4",
+      "nombre": "Gym",
+      "categoria": "Escuela",
+      "completada": false
+    },
+    {
+      "id": "5",
+      "nombre": "dadada",
+      "categoria": "Personal",
+      "completada": true
+    }
+  ]
+}
